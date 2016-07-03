@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Document</title>
+	<style>
+        #div1{width:100px;height:50px;background:#DD941B;border:1px solid #FF9900;display:none;}
+	</style>
+</head>
+<body>
+<label for="cbox"onmouseover="show()" onmouseout="hide()">
+	<input type="checkbox" id="cbox"  />自动登录
+</label>
+	<div id="div1">
+		不要在网吧勾选此选项。
+	</div>
+	<script>
+		function show(){
+			var div1=document.getElementById('div1');
+			div1.style.display="block";
+		}
+		function hide(){
+			var div1=document.getElementById('div1');
+			div1.style.display="none";
+		}
+
+	</script>
+	
+</body>
+</html>
