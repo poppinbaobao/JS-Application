@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	    div,ul,li{margin: 0;padding: 0;list-style: none;}
+		#tab{background: #A8A5A5;width: 220px; text-align: center;padding: 10px 0px;}	
+		li{width: 60px;height: 60px;background: #DEECEA;border:1px solid red;display: inline-block;text-align: center;margin-bottom: 10px;}	
+		.active{background: #16BDF0}
+		.text{border: 1px solid blue;background: #9F9393;width: 200px;height:200px;margin: 0 auto;}
+
+	</style>
+
+</head>
+<body>
+<div id="tab" class="calendar">
+	<ul class="list">
+		<li class="active"><p>一月</p></li>
+		<li><p>二月</p></li>
+		<li><p>三月</p></li><br/>
+		<li><p>四月</p></li>
+		<li><p>五月</p></li>
+		<li><p>六月</p></li><br/>
+		<li><p>七月</p></li>
+		<li><p>八月</p></li>
+		<li><p>九月</p></li><br/>
+		<li><p>十月</p></li>
+		<li><p>十一月</p></li>
+		<li><p>十二月</p></li>
+    </ul>
+	<div class="text">
+		<h2>1月活动</h2>
+		<p>大家可以商量着去哪儿玩儿了</p>
+	</div>
+	<script>
+		window.onload=function(){
+			var oLi=document.getElementsByTagName('li');
+			var oDiv=document.getElementsByClassName('text')[0];
+			for(var i=0;i<oLi.length;i++)
+			{
+				oLi[i].index=i;
+				oLi[i].onmouseover=function(){
+					for(var t=0;t<oLi.length;t++)
+					{
+						oLi[t].className="";
+					}
+					this.className="active";
+					oDiv.innerHTML="<h2>"+(this.index+1)+"月活动"+"</h2><p>大家可以商量着去哪儿玩儿了</p>";
+				}
+			}
+		}
+	</script>
+</div>
+
+	
+</body>
+</html>
