@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		input{width: 60px;height :40px;}
+		.active{background: yellow;}
+		div{width: 200px;height: 200px;background: blue;display: none;}
+		.activeClass{display: block;}
+	</style>
+</head>
+<body>
+	<input type="button" value="1" class="active">
+	<input type="button" value="2">
+	<input type="button" value="3">
+	<div class="activeClass">11</div>
+	<div >22</div>
+	<div >33</div>
+	<script>
+		window.onload=function(){
+			var oBtn=document.getElementsByTagName('input');
+			var oDiv=document.getElementsByTagName('div');
+			for(var i=0;i<oBtn.length;i++)
+			{
+				oBtn[i].index=i;
+				oBtn[i].onclick=function(){
+					for(var t=0;t<oBtn.length;t++)
+					{
+						oBtn[t].className="";
+						oDiv[t].className="";
+					}
+					oDiv[this.index].className="activeClass";
+					this.className="active";
+				}
+			}
+		}
+	</script>
+</body>
+</html>
