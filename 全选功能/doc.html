@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p id="btn">全选</p>
+	<input type="checkbox"><br/>
+	<input type="checkbox"><br/>
+	<input type="checkbox"><br/>
+	<input type="checkbox"><br/>
+	<input type="checkbox"><br/>
+	<input type="checkbox"><br/>
+	<input type="checkbox"><br/>
+	<input type="checkbox"><br/>
+	<input type="checkbox"><br/>
+	<input type="checkbox"><br/>
+	<input type="checkbox"><br/>
+	<input type="checkbox"><br/>
+	<input type="checkbox"><br/>
+	<input type="checkbox"><br/>
+	<input type="checkbox"><br/>
+	<input type="checkbox"><br/>
+	<script>
+		window.onload=function(){
+			var obtn1=document.getElementById('btn');
+			var obox=document.getElementsByTagName('input');
+			obtn1.onclick=function(){
+				if(obox[0].checked==false)
+				{
+					for(var i=0;i<obox.length;i++)
+					{
+						obox[i].checked=true;
+					}
+				}
+				else
+				{
+					for(var i=0;i<obox.length;i++)
+					{
+						obox[i].checked=false;
+					}
+				}
+			
+			};
+		};
+	</script>
+</body>
+</html>
