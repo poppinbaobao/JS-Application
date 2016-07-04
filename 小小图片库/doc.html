@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div,img{margin: 0;padding: 0;}
+		#gallary{width:450px;background: #EF5A5A;margin: 0 auto;text-align: center;padding: 5px;}
+		img{width:100px;height:75px;}
+		#replace{width: 400px;height:300px;margin:0 auto;}
+		.active{border: 5px solid blue;}
+	</style>
+</head>
+<body>
+<div id="gallary">
+	<div id="small">
+		<img src="images/bigben.jpg" alt="bigben"/>
+		<img src="images/coffee.jpg" alt="coffee"/>
+		<img src="images/fireworks.jpg" alt="fireworks"/>
+		<img src="images/rose.jpg" alt="rose"/>
+	</div>
+	<div id="place">
+		<img id="replace" src="images/placeholder.gif" alt="placeholder"/>
+	</div>
+</div>
+<script>
+	window.onload=function(){
+		var oDivSmall=document.getElementById('small');
+		var oSmallImages=oDivSmall.getElementsByTagName('img');
+		var oPlace=document.getElementById('replace');
+		for(var i=0;i<oSmallImages.length;i++)
+		{
+			oSmallImages[i].onmouseover=function(){
+				for(var t=0;t<oSmallImages.length;t++)
+				{
+					oSmallImages[t].className="";
+				}
+				this.className="active";
+				oPlace.src=this.src;
+			}
+		}
+	}
+</script>
+</body>
+</html>
