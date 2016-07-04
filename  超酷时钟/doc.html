@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+
+	</style>
+</head>
+<body>
+<img src="images/0.gif" alt="hours">
+<img src="images/0.gif" alt="hours">
+时
+<img src="images/0.gif" alt="minutes">
+<img src="images/0.gif" alt="minutes">
+分
+<img src="images/0.gif" alt="seconds">
+<img src="images/0.gif" alt="seconds">
+秒
+<script>
+	window.onload=function(){
+		 changeTime();
+		 setInterval(changeTime,1000);
+	}
+
+	function changeTime(){
+		var oImg=document.getElementsByTagName('img');
+		var oTime=new Date();
+		var str=toTwo(oTime.getHours())+""+toTwo(oTime.getMinutes())+toTwo(oTime.getSeconds());
+		for(var i=0;i<oImg.length;i++)
+		{
+			oImg[i].src="images/"+str.charAt(i)+".gif";
+		}
+    }
+   
+	function toTwo(num)
+	{
+		if(num<10)
+		{
+			return("0"+num);
+		}
+		else
+		{
+			return (""+num);
+		}
+	}
+</script>
+	
+</body>
+</html>
