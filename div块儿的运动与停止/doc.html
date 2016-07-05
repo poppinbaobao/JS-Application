@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#move{width: 100px;height: 100px;background: red;margin: 20px;position: absolute;}
+	</style>
+</head>
+<body>
+	<input id="btn1" type="button" value="开始运动">
+	<input id="btn2" type="button" value="停止运动">
+	<div id="move">	</div>
+	<script>
+		window.onload=function(){
+			var oBtn1=document.getElementById('btn1');
+			var oBtn2=document.getElementById('btn2');
+			var oDiv=document.getElementById('move');
+			var timer;
+			oBtn1.onclick=function(){			
+            	timer=setInterval(function(){oDiv.style.left=oDiv.offsetLeft+5+"px";},30);
+			};
+			oBtn2.onclick=function(){
+				clearInterval(timer);
+			}
+		}
+	</script>
+</body>
+</html>
