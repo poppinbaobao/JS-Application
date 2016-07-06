@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<input id="value" type="text">
+<input id="btn0" type="button" value="插入元素">
+<ul id="ul0">
+	
+</ul>
+<script>
+	window.onload=function(){
+		var oVal=document.getElementById('value');
+		var oBtn0=document.getElementById('btn0');
+		var oUl0=document.getElementById('ul0');
+		oBtn0.onclick=function(){
+			var oLi=document.getElementsByTagName('li');
+			var oLiTemp=document.createElement("li");
+			oLiTemp.innerHTML=oVal.value+"<a href='#'>删除</a>";
+			if(oLi.length==0)
+			{
+				oUl0.appendChild(oLiTemp);
+			}
+			else
+			{
+				oUl0.insertBefore(oLiTemp,oLi[0]);
+			}
+
+			var oDelete=document.getElementsByTagName('a');
+			for(var i=0;i<oDelete.length;i++)
+			{
+			    oDelete[i].onclick=function(){
+
+				oUl0.removeChild(this.parentNode);
+
+			   }			
+			}
+		}
+	}
+</script>
+</body>
+</html>
